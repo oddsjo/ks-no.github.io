@@ -5,7 +5,7 @@ date: 2021-02-09
 ## Single sign On (SSO)
 1. Bestilling
 
-Kommune / IKT samarbeidet sender bestilling med meta-datalenke. Gjerne i forbindelse med sak som er opprettet under bestilling av HR API.
+Kommune / IKT samarbeidet sender bestilling med meta-datalenke til fiks@ks.no
 
 2. Grunnoppsett
 
@@ -46,51 +46,9 @@ Gi skriftlig beskjed til KS når alt er OK, slik at saken kan avsluttes.
 ## Azure AD
 **Konfigurere SSO med SAML for KS læring**
 
-  Se brukerveildeningen i pdf-format her: [KS læring SSO Azure oppsett2.pdf](https://github.com/ks-no/ks-no.github.io/blob/source/content/kslering/KS%20L%C3%A6ring%20SSO%20Azure%20oppsett2.pdf) 
-  
-* Logg på https://portal.azure.com med en bruker med tilstrekkelig rettigheter til å opprette Enterprise applikasjoner.
-![image](https://user-images.githubusercontent.com/85100070/124573054-79a88c00-de49-11eb-842e-588f152bedfd.png)
+Se brukerveiledning her
 
- ![image](https://user-images.githubusercontent.com/85100070/124573083-81683080-de49-11eb-9285-600f9d434007.png)
-
-![image](https://user-images.githubusercontent.com/85100070/124573110-888f3e80-de49-11eb-8ec5-cf2ecb933667.png)
-
-![image](https://user-images.githubusercontent.com/85100070/124573132-8fb64c80-de49-11eb-9d83-8ac79b018fe1.png)
-
-![image](https://user-images.githubusercontent.com/85100070/124573159-947b0080-de49-11eb-992e-1a2008e06831.png)
-
-![image](https://user-images.githubusercontent.com/85100070/124573181-99d84b00-de49-11eb-8418-aa005f8dda9c.png)
-
-![image](https://user-images.githubusercontent.com/85100070/124573217-9fce2c00-de49-11eb-98e6-461a51cbfc4c.png)
-
-![image](https://user-images.githubusercontent.com/85100070/124573247-a492e000-de49-11eb-8cec-c0ea9c95ba0f.png)
-
-
-* Identifier (Entity ID): https://www.kslaring.no/auth/saml2/sp/metadata.php
-* Reply URL (Assertion Consumer Service URL): https://www.kslaring.no/auth/saml2/sp/saml2-acs.php/www.kslaring.no
-* Logout Url: https://www.kslaring.no/auth/saml2/sp/saml2-logout.php/www.kslaring.no 
-
-
-NB: Hvis du synker brukere fra on-prem AD, så må Azure AD Connect konfigureres slik at employeenumber attributet blir synket til Azure AD før neste steg kan gjennomføres.
-Dette er beskrevet i denne artikkelen:
-https://docs.microsoft.com/en-us/answers/questions/87509/how-do-i-sync-employee-number-attribute-from-onpre.html 
-
-![image](https://user-images.githubusercontent.com/85100070/124573327-baa0a080-de49-11eb-807d-8d44842ea9dd.png)
-
-
-![image](https://user-images.githubusercontent.com/85100070/124573345-bffdeb00-de49-11eb-97d7-4770554cdf86.png)
-
-![image](https://user-images.githubusercontent.com/85100070/124581372-584b9e00-de51-11eb-8379-fb8e2e0d73f4.png)
-
-  **App Federation Metadata Url må sendes over til KS**
-
-![image](https://user-images.githubusercontent.com/85100070/124443030-9bd4d800-dd7d-11eb-9916-3e0f596a73e9.png)
-
-  * Legg til rettigheter til de som skal benytte SSO mot KS læring
-  
-![image](https://user-images.githubusercontent.com/85100070/124443067-a8593080-dd7d-11eb-92b5-1fb1980507bd.png)
-
-## Innlogging uten fødselsnummer
+## Innlogging uten fødselsnummer (Valgfri identifikator)
 Hvis kommunen ønsker innlogging SSO uten fødselsnummer må de ta kontakt med fiks på fiks@ks.no
 Vi bruker da en annen identifikator, fortrinnsvis en <id>@<fiksorgiden>. 
 
